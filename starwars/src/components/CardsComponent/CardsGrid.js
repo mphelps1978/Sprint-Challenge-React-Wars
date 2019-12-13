@@ -12,15 +12,13 @@ export default function CardsGrid() {
     axios
       .get(url)
       .then(response => {
-        // console.log(response);
         setCharacter(response.data);
-        // console.log(character);
       })
       .catch(error => {
         console.log("Something went wrong: ", error);
       });
   }, []);
-  // console.log(character);
+
   return (
     <>
       {character.length ? (
@@ -32,6 +30,7 @@ export default function CardsGrid() {
               height={item.height}
               weight={item.mass}
               gender={item.gender}
+              homeworld={item.homeworld}
             />
           );
         })
